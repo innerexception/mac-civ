@@ -1,0 +1,21 @@
+mac-civ: the interesting decisions of building a civ without the boring bits
+
+resources: 
+	military, sociology, economics, culture
+alignment: 
+	freedom/authoritarian, communal/individualist
+
+events:
+	you might meet another civ on your planet or otherwise
+	moral technological choices
+	become a vassal of a powerful but benevoltent empire
+	be lucky and blessed with great natural resources
+
+interface:
+	text blurb with 3 or more choices, each listing a +/- to a category
+
+will you be prepared for the reckoning?
+
+choices become available if you have the required resource level and/or alignment
+choices can add/subtract from your resource levels, and also your alignment
+
