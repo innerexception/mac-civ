@@ -26,6 +26,7 @@ interface CivEvent {
 }
 
 interface EventChoice {
+    id: string
     eventId: string
     text: string
     ciAxisCost: number

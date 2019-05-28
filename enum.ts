@@ -5,7 +5,6 @@ export const ReducerActions = {
     PLAYER_UPDATE: 'pu'
 }
 export const EmptyEvent = {
-    id: getId(),
     title: '',
     nextEventId: '',
     level: 0,

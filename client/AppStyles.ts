@@ -16,7 +16,9 @@ export default {
     window: {
         background: '#f3f3f3',
         borderRadius: '5px',
-        border: '1px solid'
+        border: '1px solid',
+        maxHeight:'100%',
+        overflow:'auto'
     },
     buttonOuter: {
         color: '#252525', 
