@@ -5,7 +5,7 @@ import { onChoose } from '../uiManager/Thunks';
 
 interface Props {
     currentUser: Player
-    event: Event
+    event: CivEvent
 }
 
 export default class Session extends React.Component<Props> {

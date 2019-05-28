@@ -4,13 +4,13 @@ import * as localStorage from 'local-storage'
 export const getId = () => Date.now() + '' + Math.random()
 
 export const getSaves = () => {
-    return localStorage.get<Array<Player>>('mac-translate-saves')
+    return localStorage.get<Array<Player>>('mac-civ-saves') || []
 }
 
 export const saveGame = (player:Player) => {
-    let saves = localStorage.get<Array<Player>>('mac-translate-saves')
+    let saves = localStorage.get<Array<Player>>('mac-civ-saves') || []
     saves.push(player)
-    localStorage.set('mac-translate-saves', saves)
+    localStorage.set('mac-civ-saves', saves)
 }
 
 export const getRandomInt = (max:number) => Math.floor(Math.random() * Math.floor(max))

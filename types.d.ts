@@ -16,9 +16,10 @@ interface Player {
     culture: number
 }
 
-interface Event {
+interface CivEvent {
     id: string
-    nextEventId: string | null
+    title: string
+    nextEventId: string
     level: number
     text: string
     choices: Array<EventChoice>
@@ -45,5 +46,5 @@ interface EventChoice {
 
 interface RState {
     currentUser: Player
-    event: Event
+    event: CivEvent
 }

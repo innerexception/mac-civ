@@ -15,13 +15,11 @@ export default appReducer;
 
 const getInitialState = () => {
     return {
-        currentUser: {
-            id: getId(),
-        },
+        currentUser: {},
         event: getInitialEvent()
     }
 }
 
 const getInitialEvent = () => {
-    let level0Events = Events.filter(event=>event.level===0)
+    //let level0Events = Events.filter(event=>event.level===0)
 }

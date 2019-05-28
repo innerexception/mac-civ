@@ -6,7 +6,7 @@ import AppStyles from '../AppStyles';
 
 interface Props {
     currentUser: Player
-    event: Event
+    event: CivEvent
 }
 
 export default class UIManager extends React.Component<Props> {
