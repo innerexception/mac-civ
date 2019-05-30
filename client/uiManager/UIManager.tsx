@@ -5,20 +5,20 @@ import Editor from '../session/Editor'
 import AppStyles from '../AppStyles';
 
 interface Props {
-    currentUser: Player
+    player: Player
     event: CivEvent
 }
 
 export default class UIManager extends React.Component<Props> {
     getComponent = () => {
-        if(!this.props.currentUser.id){
+        if(!this.props.player.id){
             return <Splash />
         }
-        else if(this.props.currentUser.civName === 'admin'){
-            return <Editor currentUser={this.props.currentUser} />
+        else if(this.props.player.civName === 'admin'){
+            return <Editor player={this.props.player} />
         }
         else {
-            return <Session currentUser={this.props.currentUser} 
+            return <Session player={this.props.player} 
                             event={this.props.event} />
         }
     }

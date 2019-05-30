@@ -1,11 +1,10 @@
 import { ReducerActions } from '../../enum'
-import { getId } from '../Util';
-import * as Events from '../assets/events.json'
+import { getId, shuffleArray } from '../Util';
 
 const appReducer = (state = getInitialState(), action:any) => {
     switch (action.type) {
-        case ReducerActions.PLAYER_UPDATE: 
-            return { ...state, currentUser: action.currentUser}
+        case ReducerActions.NEXT_EVENT: 
+            return { ...state, player: action.player, event: action.event }
         default:
             return state
     }
@@ -15,11 +14,7 @@ export default appReducer;
 
 const getInitialState = () => {
     return {
-        currentUser: {},
-        event: getInitialEvent()
+        player: {},
+        event: null as null
     }
-}
-
-const getInitialEvent = () => {
-    //let level0Events = Events.filter(event=>event.level===0)
 }

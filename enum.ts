@@ -2,11 +2,14 @@ import { getId } from "./client/Util";
 
 export const ReducerActions = {
     MATCH_TICK: 'mt',
-    PLAYER_UPDATE: 'pu'
+    PLAYER_UPDATE: 'pu',
+    MATCH_START: 'ms',
+    NEXT_EVENT: 'ne'
 }
 export const EmptyEvent = {
     title: '',
     nextEventId: '',
+    isReckoning: false,
     level: 0,
     text: '',
     choices: new Array<EventChoice>()

@@ -7,7 +7,7 @@ import { getId } from '../Util';
 let initialEvent = {...EmptyEvent, id:getId()}
 
 interface Props {
-    currentUser: Player
+    player: Player
 }
 
 interface State {
@@ -69,7 +69,7 @@ export default class Editor extends React.Component<Props, State> {
     insertNewEvent = () => {
         let newEvent = {...EmptyEvent, id:getId()}
         this.state.events.push(newEvent)
-        this.setState({events: this.state.events})
+        this.setState({events: this.state.events, selectedEventId: newEvent.id})
     }
 
     deleteEvent = () => {
@@ -101,7 +101,7 @@ export default class Editor extends React.Component<Props, State> {
                 </div>
                 {LightButton(true, this.insertNewEvent, 'New Event')}
                 <h4>Edit Event</h4>
-                <select onChange={(e)=>this.setState({selectedEventId: e.currentTarget.value})}>
+                <select value={this.state.selectedEventId} onChange={(e)=>this.setState({selectedEventId: e.currentTarget.value})}>
                     {this.state.events.map(event=><option value={event.id}>{event.title}</option>)}
                 </select>
                 {LightButton(true, this.deleteEvent, 'Delete Event')}
@@ -116,6 +116,10 @@ export default class Editor extends React.Component<Props, State> {
                 <div style={{display:'flex'}}>
                     <h5>Level</h5>
                     <input type="number" value={this.getEventField('level')} onChange={(e)=>this.setEventField('level', +e.currentTarget.value)}/>
+                </div>
+                <div style={{display:'flex'}}>
+                    <h5>Reckoning</h5>
+                    <input type="checkbox" checked={this.getEventField('isReckoning')} onChange={(e)=>this.setEventField('isReckoning', e.currentTarget.checked)}/>
                 </div>
                 <div style={{display:'flex'}}>
                     <h5>Chain Event</h5>

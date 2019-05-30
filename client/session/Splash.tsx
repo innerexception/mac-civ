@@ -33,6 +33,7 @@ const getNewPlayer = (name:string) => {
         civName: name,
         level: 0,
         turn: 0,
+        eventIds: new Array<string>(),
         ciAxis: 0,
         faAxis: 0,
         military: 0,

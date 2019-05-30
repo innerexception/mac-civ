@@ -7,6 +7,7 @@ interface Player {
     civName: string
     level: number
     turn: number
+    eventIds: Array<string>
     ciAxis: number
     faAxis: number
     military: number
@@ -20,6 +21,7 @@ interface CivEvent {
     id: string
     title: string
     nextEventId: string
+    isReckoning: boolean
     level: number
     text: string
     choices: Array<EventChoice>
@@ -46,6 +48,6 @@ interface EventChoice {
 }
 
 interface RState {
-    currentUser: Player
+    player: Player
     event: CivEvent
 }
