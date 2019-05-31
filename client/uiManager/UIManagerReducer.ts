@@ -1,5 +1,4 @@
 import { ReducerActions } from '../../enum'
-import { getId, shuffleArray } from '../Util';
 
 const appReducer = (state = getInitialState(), action:any) => {
     switch (action.type) {

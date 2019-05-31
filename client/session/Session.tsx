@@ -36,16 +36,15 @@ export default class Session extends React.Component<Props> {
 }
 
 const shouldDisplayChoice = (player:Player, choice:EventChoice) => 
-    player.ciAxis >= choice.ciAxisCost &&
     player.culture >= choice.cultureCost &&
-    player.economics >= choice.economicsCost &&
-    player.faAxis >= choice.faAxisCost &&
-    player.military >= choice.militaryCost &&
-    player.sociology >= choice.sociologyCost &&
-    player.technology >= choice.technologyCost &&
-    (choice.ciAxisCost > 0 ? player.ciAxis >= choice.ciAxisCost : player.ciAxis <= choice.ciAxisCost) && 
-    (choice.faAxisCost > 0 ? player.faAxis >= choice.faAxisCost : player.faAxis <= choice.faAxisCost) && 
-    (choice.rsAxisCost > 0 ? player.rsAxis >= choice.rsAxisCost : player.rsAxis <= choice.rsAxisCost)
+               player.economics >= choice.economicsCost &&
+               player.military >= choice.militaryCost &&
+               player.sociology >= choice.sociologyCost &&
+               player.technology >= choice.technologyCost &&
+            ((choice.ciAxisCost < 0 && player.ciAxis <= choice.ciAxisCost) || (choice.ciAxisCost > 0 && player.ciAxis >= choice.ciAxisCost) || (choice.ciAxisCost===0)) &&
+            ((choice.faAxisCost < 0 && player.faAxis <= choice.faAxisCost) || (choice.faAxisCost > 0 && player.faAxis >= choice.faAxisCost) || (choice.faAxisCost===0)) &&
+            ((choice.rsAxisCost < 0 && player.rsAxis <= choice.rsAxisCost) || (choice.rsAxisCost > 0 && player.rsAxis >= choice.rsAxisCost) || (choice.rsAxisCost===0))
+    
 
 
 const styles = {

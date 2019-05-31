@@ -102,7 +102,7 @@ export default class Editor extends React.Component<Props, State> {
                 {LightButton(true, this.insertNewEvent, 'New Event')}
                 <h4>Edit Event</h4>
                 <select value={this.state.selectedEventId} onChange={(e)=>this.setState({selectedEventId: e.currentTarget.value})}>
-                    {this.state.events.map(event=><option value={event.id}>{event.title}</option>)}
+                    {this.state.events.map(event=><option value={event.id}>{event.title+' - lvl '+event.level + (event.isReckoning ? '!' : '')}</option>)}
                 </select>
                 {LightButton(true, this.deleteEvent, 'Delete Event')}
                 <div style={{display:'flex'}}>
