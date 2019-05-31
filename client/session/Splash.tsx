@@ -36,6 +36,7 @@ const getNewPlayer = (name:string) => {
         eventIds: new Array<string>(),
         ciAxis: 0,
         faAxis: 0,
+        rsAxis: 0,
         military: 0,
         sociology: 0,
         technology: 0,

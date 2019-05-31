@@ -10,6 +10,7 @@ interface Player {
     eventIds: Array<string>
     ciAxis: number
     faAxis: number
+    rsAxis: number
     military: number
     sociology: number
     technology: number
@@ -33,6 +34,7 @@ interface EventChoice {
     text: string
     ciAxisCost: number
     faAxisCost: number
+    rsAxisCost: number
     militaryCost: number
     sociologyCost: number
     technologyCost: number
@@ -40,6 +42,7 @@ interface EventChoice {
     cultureCost: number
     ciAxisChange: number
     faAxisChange: number
+    rsAxisChange: number
     militaryChange: number
     sociologyChange: number
     technologyChange: number

@@ -42,7 +42,10 @@ const shouldDisplayChoice = (player:Player, choice:EventChoice) =>
     player.faAxis >= choice.faAxisCost &&
     player.military >= choice.militaryCost &&
     player.sociology >= choice.sociologyCost &&
-    player.technology >= choice.technologyCost
+    player.technology >= choice.technologyCost &&
+    (choice.ciAxisCost > 0 ? player.ciAxis >= choice.ciAxisCost : player.ciAxis <= choice.ciAxisCost) && 
+    (choice.faAxisCost > 0 ? player.faAxis >= choice.faAxisCost : player.faAxis <= choice.faAxisCost) && 
+    (choice.rsAxisCost > 0 ? player.rsAxis >= choice.rsAxisCost : player.rsAxis <= choice.rsAxisCost)
 
 
 const styles = {

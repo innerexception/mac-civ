@@ -19,6 +19,7 @@ export const onChoose = (player:Player, event:CivEvent, choice:EventChoice) => {
     if(player.economics < 0) player.economics = 0
     player.eventIds.push(choice.eventId)
     player.faAxis += choice.faAxisChange
+    player.rsAxis += choice.rsAxisChange
     if(event.isReckoning) player.level++
     player.military += choice.militaryChange
     if(player.military < 0) player.military = 0
